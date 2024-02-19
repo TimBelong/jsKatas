@@ -5,21 +5,32 @@
 
 // Don't change the order of the elements that are left.
 
-// function removeSmallest(numbers) {
+//  function removeSmallest(numbers) {
 
-    let newArray = numbers;
-    // Finding minimal value in the array
-    let minNumber = Math.min(...newArray);
+//     let newArray = numbers;
+//     // Finding minimal value in the array
+//     let minNumber = Math.min(...newArray);
 
-    // Finding index of the minumal value
+//     // Finding index of the minumal value
+//     let minIndex = newArray.indexOf(Math.min(...newArray));
+
+//     // Removing minimal value from the array
+//     if (minIndex > -1) {
+//         newArray.splice(minIndex, 1);
+//     }
+
+//     return newArray;
+// }
+
+
+// Alternate syntax
+
+function removeSmallest(numbers) {
+
+    let newArray = [...numbers];
     let minIndex = newArray.indexOf(Math.min(...newArray));
 
-    // Removing minimal value from the array
-    if (minIndex > -1) {
-        newArray.splice(minIndex, 1);
-    }
-
-    return newArray;
+    return minIndex > -1 ? (newArray.splice(minIndex, 1), newArray) : newArray;
 }
 
 
