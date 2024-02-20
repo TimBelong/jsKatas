@@ -28,7 +28,7 @@
 function removeSmallest(numbers) {
 
     let newArray = [...numbers];
-    let minIndex = newArray.indexOf(Math.min(...newArray));
+    let minIndex = [...numbers].indexOf(Math.min(...newArray));
 
     return minIndex > -1 ? (newArray.splice(minIndex, 1), newArray) : newArray;
 }
